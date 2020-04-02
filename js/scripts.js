@@ -1,5 +1,16 @@
-(function test() {
-    console.log('Hey hey!');
-    var bar = 1;
-    console.log(bar + 2);
+"use strict";
+
+(function() {
+    var person = {
+        firstName: "John",
+        lastName : "Doe",
+        id       : 5566,
+        fullName : function() {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+    x = 123;
+    
+    console.log(person.fullName());
 })();

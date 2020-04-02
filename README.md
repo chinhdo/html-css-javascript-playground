@@ -1,4 +1,4 @@
-A simple HTML/CSS/JavaScript playground. Local playground alternative to [CodePen](https://codepen.io/), [JS Fiddle](https://jsfiddle.net/), etc.
+A simple local HTML/CSS/JavaScript playground. This should be a lot faster than online JavaScript playgrounds like [CodePen](https://codepen.io/), [JS Fiddle](https://jsfiddle.net/), etc.
 
 Uses [live-server](https://www.npmjs.com/package/live-server) behind the scene.
 
