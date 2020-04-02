@@ -22,6 +22,4 @@ The browser should automatically open and show a directory listing. Click on tes
 
 In a code editor such [Visual Studio Code](https://code.visualstudio.com/), make changes to the page's HTML or JavaScript code, save and observe the changes get loaded/executed automatically.
 
-![](assets/visual-studio-code.png)
-
 ![](assets/javascript-playground.png)
