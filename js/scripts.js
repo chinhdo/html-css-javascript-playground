@@ -9,8 +9,6 @@
             return this.firstName + " " + this.lastName;
         }
     };
-
-    x = 123;
     
     console.log(person.fullName());
 })();
