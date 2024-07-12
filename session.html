@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Session ID Test</title>
+</head>
+
+<body>
+    <div>
+        <p>This test page generate a unique Session ID that is good for 24 hours.</p>
+        <p>Session ID: <span id="sessionId"></span></p>
+    </div>
+
+    <script>
+        (function test() {
+            let sessionId = getSessionId();
+            console.log('Session ID:', sessionId);
+            document.getElementById('sessionId').textContent = sessionId;
+        })();
+
+        function getSessionId() {
+            let sessionId = getCookie("session_id");
+            if (!sessionId) {
+                sessionId = generateSessionId();
+                setCookie("session_id", sessionId, 1); // Expires in 1 day
+            }
+            return sessionId;
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));                
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function generateSessionId() {
+            return '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+    </script>
+</body>
+
+</html>
